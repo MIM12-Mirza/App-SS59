@@ -49,9 +49,9 @@
           <tbody>
             @foreach($obat as $item)
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
+              <th scope="row">{{$nomor++}}</th>
+              <td>{{$item->kodeobat}}</td>
+              <td>{{$item->nm_obat}}</td>
               <td>
                 <a href="#" class="btn btn-sm btn-info">Edit</a>
                 <a href="#" class="btn btn-sm btn-danger">Hapus</a>

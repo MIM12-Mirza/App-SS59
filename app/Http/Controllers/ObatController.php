@@ -37,7 +37,13 @@ class ObatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $obat   = new Obat;
+
+        $obat -> kodeobat = $request->kode;
+        $obat -> nm_obat = $request->obat;
+        $obat -> save();
+        
+        return redirect('/obat');
     }
 
     /**
