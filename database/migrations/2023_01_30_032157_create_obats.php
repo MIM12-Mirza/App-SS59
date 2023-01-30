@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('obats', function (Blueprint $table) {
             $table->id();
+            $table->string('kodeobat')->unique();
+            $table->string('nm_obat');
             $table->timestamps();
         });
     }

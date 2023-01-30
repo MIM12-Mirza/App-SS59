@@ -14,7 +14,9 @@ class ObatController extends Controller
      */
     public function index()
     {
-        return view('obat.index');
+        $nomor = 1;
+        $obat   = Obat::all();
+        return view('obat.index',compact('nomor','obat'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ObatController extends Controller
      */
     public function create()
     {
-        //
+        return view('obat.form');
     }
 
     /**
