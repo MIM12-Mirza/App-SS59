@@ -226,22 +226,21 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="/mahasiswa" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+            <a href="/obat" class="nav-link">
+              <i class="nav-icon fas fa-user-tie"></i>
               <p>
-                Data Mahasiswa
+                Data Obat
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/jabatan" class="nav-link">
-              <i class="nav-icon fas fa-user-tie"></i>
+            <a href="/mahasiswa" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
               <p>
-                Data Jurusan
+                Data Obat Masuk
               </p>
             </a>
           </li>
-          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

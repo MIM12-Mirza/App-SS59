@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\ObatController;
 use App\Http\Controllers\MahasiswaController;
 
 /*
@@ -25,5 +25,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/jabatan', [JabatanController::class, 'index'])->name('');
+    Route::get('/obat', [ObatController::class, 'index'])->name('');
 });

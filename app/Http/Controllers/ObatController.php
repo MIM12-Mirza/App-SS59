@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jabatan;
+use App\Models\Obat;
 
-class JabatanController extends Controller
+class ObatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class JabatanController extends Controller
      */
     public function index()
     {
-        return view('jabatan.index');
+        return view('obat.index');
     }
 
     /**
