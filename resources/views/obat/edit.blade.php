@@ -1,17 +1,17 @@
 @extends('layouts.master')
-@section('judul','Data Obat')
+@section('judul','Edit Data Obat')
 @section('content-header')
 
 <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Data Obat</h1>
+          <h1>Edit Data Obat</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Data Obat</li>
+            <li class="breadcrumb-item"><a href="">Home</a></li>
+            <li class="breadcrumb-item active">Edit Data Obat</li>
           </ol>
         </div>
       </div>
@@ -25,7 +25,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <a href="/obat/form" class="btn btn-sm btn-primary">Tambah Data</a>
+        {{-- <a href="/obat/form" class="btn btn-sm btn-primary">Edit Data</a> --}}
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -37,29 +37,19 @@
         </div>
       </div>
       <div class="card-body">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Kode Obat</th>
-              <th scope="col">Nama Obat</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach($obat as $item)
-            <tr>
-              <th scope="row">{{$nomor++}}</th>
-              <td>{{$item->kodeobat}}</td>
-              <td>{{$item->nm_obat}}</td>
-              <td>
-                <a href="/obat/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
-                <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-              </td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
+        <form method="POST" action="/obat/{{$obat->id}}">
+            @method('PUT')
+            @csrf
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Kode Obat</label>
+              <input type="text" name="kode" value="{{$obat->kodeobat}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Nama Obat</label>
+              <input type="text" name="obat" value="{{$obat->nm_obat}}" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Done</button>
+          </form>
       </div>
       <!-- /.card-body -->
       <div class="card-footer">

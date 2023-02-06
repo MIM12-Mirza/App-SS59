@@ -28,4 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/obat', [ObatController::class, 'index']);
     Route::get('/obat/form', [ObatController::class, 'create']);
     Route::post('/obat', [ObatController::class, 'store']);
+    Route::get('/obat/edit/{id}', [ObatController::class, 'edit']);
+    Route::put('/obat/{id}', [ObatController::class, 'update']);
+    
 });

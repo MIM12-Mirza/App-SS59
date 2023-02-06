@@ -37,7 +37,7 @@ class ObatController extends Controller
      */
     public function store(Request $request)
     {
-        $obat   = new Obat;
+        $obat = new Obat;
 
         $obat -> kodeobat = $request->kode;
         $obat -> nm_obat = $request->obat;
@@ -65,7 +65,8 @@ class ObatController extends Controller
      */
     public function edit($id)
     {
-        //
+        $obat = Obat::find($id);
+        return view('obat.edit',compact('obat'));
     }
 
     /**
@@ -77,7 +78,13 @@ class ObatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $obat = Obat::find($id);
+
+        $obat -> kodeobat = $request->kode;
+        $obat -> nm_obat = $request->obat;
+        $obat -> save();
+        
+        return redirect('/obat');
     }
 
     /**
