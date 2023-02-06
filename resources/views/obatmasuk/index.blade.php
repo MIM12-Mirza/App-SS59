@@ -47,7 +47,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($obat as $item)
+            @foreach($masuk as $item)
             <tr>
               <th scope="row">{{$nomor++}}</th>
               <td>{{$item->kodeobat}}</td>

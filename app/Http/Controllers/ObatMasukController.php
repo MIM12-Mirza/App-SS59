@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ObatMasuk;
+use App\Models\Obatmasuk;
 
 class ObatMasukController extends Controller
 {
@@ -15,8 +15,8 @@ class ObatMasukController extends Controller
     public function index()
     {
         $nomor = 1;
-        $masuk   = ObatMasuk::all();
-        return view('obatmasuk.index',compact('nomor','obatmasuk'));
+        $masuk   = Obatmasuk::all();
+        return view('obatmasuk.index',compact('nomor','masuk'));
     }
 
     /**
