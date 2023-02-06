@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ObatController;
-use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\ObatMasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/obat/edit/{id}', [ObatController::class, 'edit']);
     Route::put('/obat/{id}', [ObatController::class, 'update']);
     Route::delete('/obat/{id}', [ObatController::class, 'destroy']);    
+
+    Route::get('/obatmasuk', [ObatMasukController::class, 'index']);
+    Route::get('/obatmasuk/form', [ObatMasukController::class, 'create']);
+    Route::post('/obatmasuk', [ObatMasukController::class, 'store']);
+    Route::get('/obatmasuk/edit/{id}', [ObatMasukController::class, 'edit']);
+    Route::put('/obatmasuk/{id}', [ObatMasukController::class, 'update']);
+    Route::delete('/obatmasuk/{id}', [ObatMasukController::class, 'destroy']);  
 });
