@@ -43,10 +43,26 @@
               <label for="exampleInputEmail1" class="form-label">Kode Obat</label>
               <input type="text" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
+
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Nama Obat</label>
+              <label for="exampleInputPassword1" class="form-label">Asal Obat</label>
               <input type="text" name="obat" class="form-control" id="exampleInputPassword1">
             </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Tanggal Obat Masuk</label>
+                <input type="date" name="obat" class="form-control" id="exampleInputPassword1">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Nama Obat</label>
+                <select name="obat" class="form-control" id="">
+                    <option value=""> Pilih Nama Obat </option>
+                    @foreach($masuk as $data)
+                    <option value="{{$data->id}}">{{$data->kode}}- {{$data->nm_obat}}</option>
+                    @endforeach
+                </select>
+              </div>
             <button type="submit" class="btn btn-primary">Done</button>
           </form>
       </div>
