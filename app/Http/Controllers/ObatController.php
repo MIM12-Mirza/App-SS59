@@ -95,6 +95,9 @@ class ObatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $obat = Obat::find($id);
+        $obat->delete();
+
+        return redirect('/obat');
     }
 }

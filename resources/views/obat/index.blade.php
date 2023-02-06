@@ -54,7 +54,36 @@
               <td>{{$item->nm_obat}}</td>
               <td>
                 <a href="/obat/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
-                <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                {{-- TOMBOL --}}
+                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-default{{$item->id}}">
+                  Hapus
+                </button>
+                <div class="modal fade" id="modal-default{{$item->id}}">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Peringatan!</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Yakin Data Obat {{$item->nm_obat}} Di Hapus?</p>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                        <form action="/obat/{{$item->id}}" method="POST">
+                          @method('DELETE')
+                          @csrf
+                          <button type="submit" class="btn btn-primary">Hapus</button>
+                        </form>
+                
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
               </td>
             </tr>
             @endforeach

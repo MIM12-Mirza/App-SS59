@@ -30,5 +30,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/obat', [ObatController::class, 'store']);
     Route::get('/obat/edit/{id}', [ObatController::class, 'edit']);
     Route::put('/obat/{id}', [ObatController::class, 'update']);
-    
+    Route::delete('/obat/{id}', [ObatController::class, 'destroy']);    
 });
