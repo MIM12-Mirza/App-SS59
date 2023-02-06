@@ -26,7 +26,8 @@ class ObatMasukController extends Controller
      */
     public function create()
     {
-        //
+        $masuk = Obatmasuk::all();
+        return view('obatmasuk.form',compact('masuk')); 
     }
 
     /**
