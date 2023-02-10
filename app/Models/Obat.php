@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Obat extends Model
 {
-    public function obats(){
-        return $this->hasOne(Obat::class, "id","obats_id");
+    public function masuks(){
+        return $this->belongsTo(Masuk::class);
     }
 }

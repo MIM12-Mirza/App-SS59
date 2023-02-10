@@ -25,7 +25,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <a href="/obat/form" class="btn btn-sm btn-primary">Tambah Data</a>
+        <a href="/masuk/form" class="btn btn-sm btn-primary">Tambah Data</a>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -41,19 +41,26 @@
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Kode Obat</th>
+              <th scope="col">Kode</th>
+              <th scope="col">Jenis Obat</th>
+              <th scope="col">Harga</th>
+              <th scope="col">Tanggal Masuk</th>
               <th scope="col">Nama Obat</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($obat as $item)
+            @foreach($masuk as $item)
             <tr>
               <th scope="row">{{$nomor++}}</th>
-              <td>{{$item->kodeobat}}</td>
-              <td>{{$item->nm_obat}}</td>
+              <td>{{$item->kode}}</td>
+              <td>{{$item->jenis_obat}}</td>
+              <td>{{$item->harga}}</td>
+              <td>{{$item->tanggal}}</td>
+              <td>{{$item->obats->nm_obat}}</td>
+              
               <td>
-                <a href="/obat/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
+                <a href="/masuk/edit/{{$item->id}}" class="btn btn-sm btn-info">Edit</a>
                 {{-- TOMBOL --}}
                 <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-default{{$item->id}}">
                   Hapus
@@ -72,7 +79,7 @@
                       </div>
                       <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                        <form action="/obat/{{$item->id}}" method="POST">
+                        <form action="/masuk/{{$item->id}}" method="POST">
                           @method('DELETE')
                           @csrf
                           <button type="submit" class="btn btn-primary">Hapus</button>

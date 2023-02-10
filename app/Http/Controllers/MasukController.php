@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Masuk;
+use App\Models\Obat;
 
 class MasukController extends Controller
 {
@@ -15,8 +16,8 @@ class MasukController extends Controller
     public function index()
     {
         $nomor = 1;
-        $obat   = Masuk::all();
-        return view('masuk.index',compact('nomor','obat'));
+        $masuk   = Masuk::all();
+        return view('masuk.index',compact('nomor','masuk'));
     }
 
     /**
@@ -26,7 +27,8 @@ class MasukController extends Controller
      */
     public function create()
     {
-        //
+        $obat = Obat::all();
+        return view('masuk.form', compact('obat'));
     }
 
     /**
@@ -37,7 +39,17 @@ class MasukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $masuk = new Masuk;
+
+        $masuk->kode = $request->kode;
+        $masuk->jenis_obat = $request->jenis_obat;
+        $masuk->harga = $request->harga;
+        $masuk->tanggal_masuk = $request->tanggal;
+        $masuk->obats_id = $request->obat;
+        $masuk->foto = "default.jpg";
+        $masuk->save();
+
+        return redirect('/masuk');
     }
 
     /**

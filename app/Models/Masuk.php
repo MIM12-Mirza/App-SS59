@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Masuk extends Model
 {
-    use HasFactory;
+    public function obats(){
+        return $this->hasOne(Obat::class, "id","obats_id");
+    }
 }

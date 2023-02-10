@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('masuks', function (Blueprint $table) {
             $table->id();
-            $table->string('kodeobat')->unique();
-            $table->string('nm_obat');
+            $table->string('kode')->unique();
+            $table->string('jenis_obat');
             $table->string('harga');
             $table->date('tanggal_masuk');
             $table->bigInteger('obats_id');

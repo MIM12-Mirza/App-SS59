@@ -16,7 +16,7 @@
         </div>
       </div>
     </div><!-- /.container-fluid -->
-  </section>  
+  </section> 
 @endsection
 
 @section('content')
