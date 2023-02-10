@@ -234,7 +234,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/obatmasuk" class="nav-link">
+            <a href="/masuk" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Obat Masuk

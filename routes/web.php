@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ObatController;
-use App\Http\Controllers\ObatMasukController;
+use App\Http\Controllers\MasukController;
 
 /*
 |--------------------------------------------------------------------------
