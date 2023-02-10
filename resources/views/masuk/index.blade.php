@@ -56,7 +56,7 @@
               <td>{{$item->kode}}</td>
               <td>{{$item->jenis_obat}}</td>
               <td>{{$item->harga}}</td>
-              <td>{{$item->tanggal}}{{date_format(date_create($item->tanggal_masuk),"d M Y")}}</td>
+              <td>{{$item->tanggal}}{{date_format(date_create($item->tanggal_masuk),"D M Y")}}</td>
               <td>{{$item->obats->nm_obat}}</td>
               
               <td>

@@ -71,7 +71,9 @@ class MasukController extends Controller
      */
     public function edit($id)
     {
-        //
+        $masuk  = Masuk::find($id);
+        $obat   = Obat::all();
+        return view('masuk.edit',compact('masuk','obat'));
     }
 
     /**
@@ -83,7 +85,17 @@ class MasukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $masuk =  Masuk::find($id);
+
+        $masuk->kode = $request->kode;
+        $masuk->jenis_obat = $request->jenis_obat;
+        $masuk->harga = $request->harga;
+        $masuk->tanggal_masuk = $request->tanggal;
+        $masuk->obats_id = $request->obat;
+        $masuk->foto = "default.jpg";
+        $masuk->save();
+
+        return redirect('/masuk');
     }
 
     /**
@@ -94,6 +106,9 @@ class MasukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $masuk = Masuk::find($id);
+        $masuk->delete();
+
+        return redirect('/masuk');
     }
 }
