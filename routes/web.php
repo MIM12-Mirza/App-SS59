@@ -32,10 +32,10 @@ Route::middleware('auth')->group(function () {
     Route::put('/obat/{id}', [ObatController::class, 'update']);
     Route::delete('/obat/{id}', [ObatController::class, 'destroy']);    
 
-    Route::get('/obatmasuk', [ObatMasukController::class, 'index']);
-    Route::get('/obatmasuk/form', [ObatMasukController::class, 'create']);
-    Route::post('/obatmasuk', [ObatMasukController::class, 'store']);
-    Route::get('/obatmasuk/edit/{id}', [ObatMasukController::class, 'edit']);
-    Route::put('/obatmasuk/{id}', [ObatMasukController::class, 'update']);
-    Route::delete('/obatmasuk/{id}', [ObatMasukController::class, 'destroy']);  
+    Route::get('/masuk', [MasukController::class, 'index']);
+    Route::get('/masuk/form', [MasukController::class, 'create']);
+    Route::post('/masuk', [MasukController::class, 'store']);
+    Route::get('/masuk/edit/{id}', [MasukController::class, 'edit']);
+    Route::put('/masuk/{id}', [MasukController::class, 'update']);
+    Route::delete('/masuk/{id}', [MasukController::class, 'destroy']);  
 });
